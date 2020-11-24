@@ -6,8 +6,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    # 'Hello World'
-    @pokemon = Pokemon.find(rand(1..10))
+    # define variable pokemon to acces a rand pokemon instance
+    @pokemon = Pokemon.find(rand(1..Pokemon.count))
 
     display_page :index
   end
