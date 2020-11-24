@@ -2,10 +2,14 @@ source 'http://www.rubygems.org'
 
 gem 'sinatra'
 gem 'haml'
-
-group :development do
-  gem 'shotgun'
-  gem 'rake'
-  gem 'rack-test'
-  gem 'minitest'
-end
+gem 'activerecord', require: 'active_record'
+gem 'rake'
+gem 'sqlite3', '~> 1.4', '>= 1.4.2'
+gem 'shotgun'
+gem 'require_all'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
+gem 'bcrypt'
+gem 'rack-flash3', require: 'rack-flash'
+gem 'rack-test'
+gem 'minitest'
+gem 'pry', '~> 0.13.1'
