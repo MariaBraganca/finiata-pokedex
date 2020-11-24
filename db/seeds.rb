@@ -15,6 +15,7 @@ id.each do |id|
                 height: pokemon["height"],
                 weight: pokemon["weight"],
                 species: pokemon["species"]["name"],
+                abilities: pokemon["abilities"].map{|i| i["ability"]["name"]}
                 )
   puts "Pokemon: #{pokemon["name"]} created"
 end
