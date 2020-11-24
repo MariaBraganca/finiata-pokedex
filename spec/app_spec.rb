@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-class AppSpec < PokedexAppSpec
+class AppSpec < ApplicationControllerSpec
   describe '/' do
     let(:result) { get '/' }
 

@@ -1,6 +1,8 @@
 ENV['RACK_ENV'] = 'test'
+require File.expand_path("../../config/environment", __FILE__)
 
 require 'sinatra'
+require 'sinatra/activerecord/rake'
 require 'bundler'
 Bundler.require
 
@@ -9,7 +11,7 @@ require 'rack/test'
 require 'minitest/autorun'
 
 # require application components
-require './pokedex_app.rb'
+require './app/controllers/application_controller.rb'
 require 'json'
 
 class BaseSpec < Minitest::Spec
@@ -18,12 +20,12 @@ class BaseSpec < Minitest::Spec
   end
 end
 
-class PokedexAppSpec < BaseSpec
+class ApplicationControllerSpec < BaseSpec
   include Rack::Test::Methods
 
-  before { app.views = './views' }
+  before { app.views = './app/views' }
 
   def app
-    PokedexApp
+    ApplicationController
   end
 end
