@@ -2,6 +2,23 @@
   %h1.p-3 Welcome to the Finiata Pokedex!
 
 #index.container.my-5.p-3
-  %marquee{ direction: 'right' }
-    %h1.p-3 Hello World!
-    %img{ src: './images/nyan-cat.gif' }
+  %div.pokemon-information
+    %img.pokemon-img.p-3{ src: "#{@pokemon.img}" }
+    %div.pokemon-details.p-3
+      %h1 Hello fellows warriors,
+      %h1.mb-5
+        I'm
+        %b
+          #{@pokemon.name.capitalize}!
+      %p I'm #{@pokemon.height}m high and weight #{@pokemon.weight}kg!
+      %p
+        I belong to the
+        %i
+          #{@pokemon.species}
+        family species!
+      %p.mb-0 These are my abilities:
+      %ul.pokemon-list
+        - @pokemon.abilities.each do |ability|
+          %li
+            #{ability}
+      %a.pokemon-link{href: "https://pokeapi.co/api/v2/pokemon/#{@pokemon['id']}/"} Want do know me better? Ah...

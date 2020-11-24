@@ -9,3 +9,33 @@ html, body {
 .cursor-pointer {
   cursor: pointer;
 }
+
+/* Pokemon styles */
+/* info */
+.pokemon-information {
+  display: flex;
+}
+/* graphics */
+.pokemon-img {
+  width: 50%;
+  transition: transform 1s ease;
+}
+.pokemon-img:hover {
+  transform: scale(1.05);
+}
+/* lists */
+.pokemon-details ul {
+  list-style-type: "# ";
+}
+.pokemon-details ul li:last-of-type {
+  margin-bottom: 2rem;
+}
+/* links */
+.pokemon-details a {
+  color: #014eaa;
+}
+.pokemon-details a:hover {
+  color: #014eaa;
+  text-decoration: none;
+  border-bottom: 2px solid #014eaa;
+}

@@ -7,6 +7,8 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     # 'Hello World'
+    @pokemon = Pokemon.find(rand(1..10))
+
     display_page :index
   end
 
